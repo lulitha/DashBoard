@@ -16,6 +16,13 @@ namespace DashBoard
 {
     public partial class Form1 : Form
     {
+        //---------------------------------------------------
+        //
+        //                  41953 CPL GIHAN RL
+        //      Github Rep-987456
+        //      V0.1
+        //
+        //------------------------------------------------------
         public Form1()
         {
             InitializeComponent();
@@ -77,14 +84,11 @@ namespace DashBoard
 
         private async void PingIPs() {
            
-
-            dataGridView1.Rows.Clear();
-
-           
-            _countDown =0;
-
             Color customColor = Color.FromArgb(234, 49, 46);
 
+            dataGridView1.Rows.Clear();
+            
+            _countDown =0;       
 
             for (int i = 0; i < ipAddresses.Count; i++)
             {
@@ -105,8 +109,7 @@ namespace DashBoard
                     dataGridView1.Rows[i].DefaultCellStyle.BackColor = customColor;
                     _countDown++;
                 }
-            }
-           
+            }           
             lblcountDown.Text = _countDown.ToString();
 
             if (dataGridView1.Rows.Count == int.Parse(lblcountLocation.Text))
@@ -117,8 +120,7 @@ namespace DashBoard
                 Thread.Sleep(5000);
                 PingIPs();                
             }
-        }
-        
+        }       
 
         private void btnMinimized_Click(object sender, EventArgs e)
         {
